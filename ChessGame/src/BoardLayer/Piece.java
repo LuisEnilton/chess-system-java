@@ -1,3 +1,5 @@
+package BoardLayer;
+
 public class Piece {
     protected Position position;
     private Board board;
