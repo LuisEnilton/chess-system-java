@@ -1,4 +1,6 @@
 package AplicationLayer;
+import java.io.Console;
+
 import BoardLayer.Board;
 import ChessLayer.ChessMatch;
 

@@ -1,6 +1,8 @@
 package ChessLayer;
 
 import BoardLayer.Board;
+import ChessLayer.Pieces.King;
+import ChessLayer.Pieces.Rook;
 
 public class ChessMatch {
     private int turn;
@@ -9,6 +11,7 @@ public class ChessMatch {
 
     public ChessMatch(Board board) {
         this.board = new Board(8, 8);
+        initialSetup();
     }
 
     public ChessPiece[][] getPieces(){
@@ -19,6 +22,16 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    private void placeNewPiece(char column, int row, ChessPiece piece){
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
+    }
+  
+    private void initialSetup(){
+        placeNewPiece('b', 6, new Rook(board,Color.White)); 
+        placeNewPiece('e', 8, new King(board, Color.Black));
+        placeNewPiece('e',1,new King(board, Color.Black));
     }
 
     
